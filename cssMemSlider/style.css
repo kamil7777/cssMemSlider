@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: bisque;
+    padding: 0 10px;
+}
+.container {
+    max-width: 900px;
+    height: 500px;
+    overflow: hidden; 
+    margin: 0 auto;
+}
+.wrapper {
+    display: flex;
+    width: 400%;
+    height: 100%;
+   
+   
+}
+.image {
+    width: 25%;
+    height: 500px;
+    transition: all .6s ease;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+}
+.block-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.button {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: black;
+    margin: 10px; 
+    transition: all 0.3s;
+}
+.button:hover {
+    background-color: white;
+    transition: all 0.3s;
+}
+/* .button:active, .button:focus {
+    border: 3px black solid;
+    background-color: white;
+    
+} */
+input[name = "btn"] {
+    position: absolute;
+   visibility: hidden; 
+} 
+
+#btn1:checked ~.s1 {
+    margin-left: 0;
+}
+#btn2:checked ~.s1 {
+    margin-left: -25%;
+}
+#btn3:checked ~.s1 {
+    margin-left: -50%;
+}
+#btn4:checked ~.s1 {
+    margin-left: -75%;
+}
+/* .btn-wrapper .button {
+    
+    width: 30px;
+    height: 30px;
+} */
+
+/* .img1 {
+    left: 0;
+    animation: imageSlide1 3s 1 alternate;
+}
+.img2 {
+    left: 0;
+    animation: imageSlide2 3s 1 alternate;
+}
+.img3 {
+    left: 0;
+    animation: imageSlide3 3s 1 alternate;
+}
+.img4 {
+    left: 0;
+    animation: imageSlide4 3s 1 alternate;
+} */
+/*  @keyframes imageSlide1 {
+        from {left: 0; }
+        to {left: -900px; }
+    } 
+
+@keyframes imageSlide2 {
+        from {left: 900px; }
+        to {left: 0; }
+    }
+
+@keyframes imageSlide3 {
+    from {left: 1800px; }
+    to {left: 900px; }
+}
+@keyframes imageSlide4 {
+    from {left: 2700px; }
+    to {left: 1800px; }
+}  */
+/* input {
+    visibility:hidden;
+} */
+
+/* .button {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: black;
+    transition: all 0.3s;
+    cursor: pointer;
+} */
+
+/* .button:hover {
+    background-color: black;
+    cursor: pointer;
+    transition: 0.3s;
+} */
