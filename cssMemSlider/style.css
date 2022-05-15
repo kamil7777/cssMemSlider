@@ -1,39 +1,41 @@
 * {
     box-sizing: border-box;
 }
+
 body {
-    background-color: bisque;
+    background-color: #979696;
     padding: 0 10px;
     font-size: 20px;
     font-weight: bold;
 }
+
 .container {
-    width: 1024px;
+    max-width: 1024px;
     height: 800px;
     margin: 2% auto 0;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
 }
 
 .wrapper-img {
-    width: inherit;
-    height: 724px;
+    width: 100%;
+    height: 90.5%;
     overflow: hidden;
     position: relative;
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
     border-radius: 10px;
 }
+
 .image {
-    height: 724px;
+    height: 100%;
 	position: absolute;
-	width: 1024px;
+	width: 100%;
     opacity: 0;
     z-index: 0;
     transform: scale(1.5);
-    transition: transform ease-in-out .8s, opacity ease-in-out .5s;
-
+    transition: transform ease-in-out .8s, opacity ease-in-out .8s;
 }
+
 #btn1:checked ~ .wrapper-img .btn1,
 #btn2:checked ~ .wrapper-img .btn2,
 #btn3:checked ~ .wrapper-img .btn3,
@@ -41,39 +43,43 @@ body {
     opacity: 1;
     z-index: 1;
     transform: scale(1);
-    transition: transform ease-in-out .8s, opacity ease-in-out .5s;
+    transition: transform ease-in-out .8s, opacity ease-in-out .8s;
 }
+
 .btn1 {
     background-image: url(./img/1.jpg);
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
-    
-    
+    background-position: center center;
 }
+
 .btn2 {
     background-image: url(./img/2.jpg);
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
-    
- }
+    background-position: center center;
+}
+
 .btn3 {
     background-image: url(./img/3.jpg);
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    
- }
+    background-position: center center;
+}
+
 .btn4 {
     background-image: url(./img/4.jpg);
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
- }
+    background-position: center center;
+}
 
 .block-button {
-    display: inline-block;
+    display: flex;
     margin-left: auto;
-
+    gap: 10px;
 }
+
 label {
     height: 20px;
 	width: 20px;
@@ -83,51 +89,75 @@ label {
     display: inline-block;
     transition: background ease-in-out 0.3s;
     position: relative;
-    
 }
+
 label:after {
     border: 2px solid white;
     content: " ";
-	display: block;
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
     left: -2px;
 	position: absolute;
 	top: -2px;
-    
 }
-#btn1:checked ~ .block-button label:nth-of-type(1),
-#btn2:checked ~ .block-button label:nth-of-type(2),
-#btn3:checked ~ .block-button label:nth-of-type(3),
-#btn4:checked ~ .block-button label:nth-of-type(4) {
+
+#btn1:checked ~ .block-button .label1 label,
+#btn2:checked ~ .block-button .label2 label,
+#btn3:checked ~ .block-button .label3 label,
+#btn4:checked ~ .block-button .label4 label {
     background: rgb(16, 236, 90);
-    
 }
-label:hover {
-    background: rgb(240, 7, 7);
+
+.wrp-label {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
+
+.wrp-label:hover label {
+    background: rgb(255, 55, 5);
+}
+
 input {
-   display: none; 
+    display: none; 
 } 
+
 .text {
-    width: 250px;
-    position: relative;
+    width: 20%;
 }
 
 .paragr {
-    position: absolute; 
+    position: absolute;
 	opacity: 0;
     z-index: 0; 
-    transition: transform ease-in-out .8s, opacity ease-in-out .8s;
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
 }
-#btn1:checked ~ .text .text1,
-#btn2:checked ~ .text .text2,
-#btn3:checked ~ .text .text3,
-#btn4:checked ~ .text .text4 {
+
+#btn1:checked ~ .text div:nth-of-type(1),
+#btn2:checked ~ .text div:nth-of-type(2),
+#btn3:checked ~ .text div:nth-of-type(3),
+#btn4:checked ~ .text div:nth-of-type(4) {
     opacity: 1;
     z-index: 1;
-    transition: transform ease-in-out .8s, opacity ease-in-out .8s;
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
 }
 
-
+@media screen and (max-width: 850px){
+    .container {
+        height: 600px;
+    }
+}
+@media screen and (max-width: 575px){
+    .container {
+        height: 400px;
+    }
+} 
+@media screen and (max-width: 425px){
+    .container {
+        height: 300px;
+    }
+    .block-button {
+        padding-top: 20px;
+    }
+} 
